@@ -8,9 +8,12 @@ import com.myBank.MyBank.entity.Users;
 import com.myBank.MyBank.infra.security.TokenService;
 import com.myBank.MyBank.repository.ContasRepository;
 import com.myBank.MyBank.repository.UserRepository;
+import com.myBank.MyBank.service.UsuarioCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import javax.validation.Valid;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,11 +25,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.URI;
 import java.util.List;
 
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("myBank/auth")
 public class AuthenticationController {
 
     @Autowired
@@ -41,12 +45,16 @@ public class AuthenticationController {
     @Autowired
     private TokenService tokenService;
 
+
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
         var token = tokenService.generateToken((Users) auth.getPrincipal());
+        // Criar cache do usuário logado
+        Users usuarioLogado = repository.findUserLogado(data.login());
+        UsuarioCache.getInstance().setUsers(usuarioLogado);
 
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
@@ -66,7 +74,6 @@ public class AuthenticationController {
             contasRepository.save(conta);
         }
 
-        // Cria uma nova instância de Users
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
         Users newUser = new Users(
                 data.cpfCnpj(),
@@ -79,6 +86,7 @@ public class AuthenticationController {
 
         repository.save(newUser);
 
-        return ResponseEntity.ok("Usuário cadastrado com sucesso!");
+
+        return new ResponseEntity<>("Usuário cadastrado com sucesso!", HttpStatus.CREATED);
     }
 }

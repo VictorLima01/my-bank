@@ -38,9 +38,9 @@ public class Users implements UserDetails {
 
     @ManyToMany(targetEntity=Contas.class, fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
-            name = "users_contas", // Nome da tabela de junção
-            joinColumns = @JoinColumn(name = "users_cpf_cnpj"), // Chave estrangeira da tabela Users
-            inverseJoinColumns = @JoinColumn(name = "conta_id") // Chave estrangeira da tabela Contas
+            name = "users_contas",
+            joinColumns = @JoinColumn(name = "users_cpf_cnpj"),
+            inverseJoinColumns = @JoinColumn(name = "conta_id")
     )
     private List<Contas> contas;
 
