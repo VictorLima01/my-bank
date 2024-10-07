@@ -6,7 +6,7 @@ Pensando nesse desafio criei essa aplicação que utiliza de frameworks do Sprin
 
 Mas para exemplificar melhor a aplicação estarei deixando a collection do PostMan para seguir os testes que deverão ser feitos para concluir os testes da aplicação.
 
-Link PostMan: https://drive.google.com/drive/folders/10gWoDMZIXws8OZ8HeRQiP-kml26BJo02?usp=sharing. Estou deixando as requisições numeradas e já com os payloads montados.
+Link PostMan: https://drive.google.com/drive/folders/10gWoDMZIXws8OZ8HeRQiP-kml26BJo02?usp=sharing. Estou deixando as requisições numeradas e já com os payloads montados. Lembrando que para seguir com os testes dessa aplicação é necessário fazer a ceiacao dos clientes, e depois seguri com o login do cliente. Após o login será gerado um token que terá que ser usado como Bearer token para realizar transações. A ideia do app seria mais para simular um login de uma app do banco.
 
 Sobre o banco de dados foi usado o H2, do qual configurei na aplicação para subir localmente junto a aplicação. http://localhost:8080/h2-console, acessando esse seguinte link e nos campos 
  * JDBC URL: jdbc:h2:mem:testdb
