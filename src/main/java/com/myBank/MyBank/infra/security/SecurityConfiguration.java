@@ -41,7 +41,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/myBank/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/myBank/transacao/transferir-para-conta").hasRole("USER")
                         .requestMatchers(HttpMethod.POST, "/myBank/transacao/reverter-pagamento").hasRole("USER")
-                        .requestMatchers(HttpMethod.GET, "/myBank/transacao/findAll").hasRole("USER")
+                        .requestMatchers(HttpMethod.GET, "/myBank/transacao/findAll").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
