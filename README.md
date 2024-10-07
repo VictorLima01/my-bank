@@ -45,3 +45,4 @@ Payload de criação de clientes e contas:
     "role": "USER"
 }
 
+Observação: Tentei consumir o serviço de envio de notificações porém parece estar fora, mas utilizei o Rest Template para consumo de API's. Deixei o print na mesma pasta do drive que foi disponibilizada.
