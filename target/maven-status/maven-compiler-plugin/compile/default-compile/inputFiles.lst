@@ -1,0 +1,13 @@
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\dto\RegisterDTO.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\entity\Users.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\infra\security\SecurityConfiguration.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\dto\AuthenticationDTO.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\dto\UserRole.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\infra\security\TokenService.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\infra\security\SecurityFilter.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\dto\LoginResponseDTO.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\entity\Contas.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\repository\UserRepository.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\config\WebSecurityConfig.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\controller\AuthenticationController.java
+C:\Users\Letícia Viana\Estudos_Victor\my-bank\src\main\java\com\myBank\MyBank\MyBankApplication.java
