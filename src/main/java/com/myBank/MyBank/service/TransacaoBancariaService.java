@@ -23,6 +23,9 @@ public class TransacaoBancariaService {
     @Autowired
     TransacaoRepository transacaoRepository;
 
+    @Autowired
+    EnvioNotificacaoService envioNotificacaoService;
+
 
     public void transferir(BodyTransferenciaBancariaDTO data) {
         // Remetente
@@ -54,6 +57,7 @@ public class TransacaoBancariaService {
                             .withValorTransferencia(data.getValorTransferencia())
                             .build();
                     transacaoRepository.save(transacao);
+                    //envioNotificacaoService.envioNotificacaoRestApi(transacao);
                 }catch (Exception e){
                     throw new TransacaoBancariaException("Erro ao salvar transferencia bancaria! " + e.getMessage());
                 }
